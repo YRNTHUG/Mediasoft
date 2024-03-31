@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" xmlns:th="http://www.w3.org/1999/xhtml">
+    <title>Storage</title>
+</head>
+<body>
+<div th:switch="${storages}">
+    <h2 th:case="null">No storages found!</h2>
+    <div th:case="*">
+        <h2>Storages</h2>
+        <table>
+            <thead>
+            <tr>
+                <th>Id</th>
+                <th>name</th>
+                <th>article</th>
+                <th>description</th>
+                <th>category</th>
+                <th>price</th>
+                <th>quantity</th>
+                <th>Last Modified</th>
+                <th>Created At</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="storages : ${storages}">
+                <td th:text="${storages.id}"></td>
+                <td th:text="${storages.name}"></td>
+                <td th:text="${storages.article}"></td>
+                <td th:text="${storages.description}"></td>
+                <td th:text="${storages.category}"></td>
+                <td th:text="${storages.price}"></td>
+                <td th:text="${storages.quantity}"></td>
+                <td th:text="${storages.lastModified}"></td>
+                <td th:text="${storages.createdAt}"></td>
+
+                <td><a th:href="@{storage-update/{id}(id=${storages.id})}">Edit</a></td>
+                <td><a th:href="@{storage-delete/{id}(id=${storages.id})}">Delete</a></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <p><a href="/storage-create">Create Storage</a></p>
+</div>
+</body>
+</html>

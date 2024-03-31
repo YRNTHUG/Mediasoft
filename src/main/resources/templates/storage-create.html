@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Create storages</title>
+</head>
+<body>
+<form action="#" th:action="@{/storage-create}" th:object="${storages}" method="post">
+    <label for="name">name</label>
+    <input type="text" th:field="*{name}" id="name" placeholder="name">
+    <label for="article">article</label>
+    <input type="text" th:field="*{article}" id="article" placeholder="article">
+    <label for="description">description</label>
+    <input type="text" th:field="*{description}" id="description" placeholder="description">
+    <label for="category">category</label>
+    <input type="text" th:field="*{category}" id="category" placeholder="category">
+    <label for="price">price</label>
+    <input type="text" th:field="*{price}" id="price" placeholder="price">
+    <label for="quantity">quantity</label>
+    <input type="text" th:field="*{quantity}" id="quantity" placeholder="quantity">
+    <label for="lastModified">Last Modified</label>
+    <input type="text" th:field="*{lastModified}" id="lastModified" placeholder="Last Modified">
+    <label for="createdAt">Created At</label>
+    <input type="text" th:field="*{createdAt}" id="createdAt" placeholder="Created At">
+    <input type="submit" value="Create storage">
+</form>
+</body>
+</html>
